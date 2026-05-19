@@ -1,9 +1,9 @@
 import { visibleWidth } from "@earendil-works/pi-tui";
 import { beforeAll, describe, expect, it } from "vitest";
-import type { AgentSession } from "../src/core/agent-session.js";
-import type { ReadonlyFooterDataProvider } from "../src/core/footer-data-provider.js";
-import { FooterComponent } from "../src/modes/interactive/components/footer.js";
-import { initTheme } from "../src/modes/interactive/theme/theme.js";
+import type { ReadonlyFooterDataProvider } from "../src/core/footer-data-provider.ts";
+import type { Session } from "../src/core/session.ts";
+import { FooterComponent } from "../src/modes/interactive/components/footer.ts";
+import { initTheme } from "../src/modes/interactive/theme/theme.ts";
 
 type AssistantUsage = {
 	input: number;
@@ -20,7 +20,7 @@ function createSession(options: {
 	reasoning?: boolean;
 	thinkingLevel?: string;
 	usage?: AssistantUsage;
-}): AgentSession {
+}): Session {
 	const usage = options.usage;
 	const entries =
 		usage === undefined
@@ -56,7 +56,7 @@ function createSession(options: {
 		},
 	};
 
-	return session as unknown as AgentSession;
+	return session as unknown as Session;
 }
 
 function createFooterData(providerCount: number): ReadonlyFooterDataProvider {

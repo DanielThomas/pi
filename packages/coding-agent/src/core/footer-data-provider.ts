@@ -105,8 +105,8 @@ export class FooterDataProvider {
 
 	constructor(cwd: string) {
 		this.cwd = cwd;
-		this.gitPaths = findGitPaths(cwd);
-		this.setupGitWatcher();
+		this.gitPaths = cwd ? findGitPaths(cwd) : null;
+		if (cwd) this.setupGitWatcher();
 	}
 
 	/** Current git branch, null if not in repo, "detached" if detached HEAD */
@@ -164,8 +164,8 @@ export class FooterDataProvider {
 		}
 		this.clearGitWatchers();
 		this.cachedBranch = undefined;
-		this.gitPaths = findGitPaths(cwd);
-		this.setupGitWatcher();
+		this.gitPaths = cwd ? findGitPaths(cwd) : null;
+		if (cwd) this.setupGitWatcher();
 		this.notifyBranchChange();
 	}
 

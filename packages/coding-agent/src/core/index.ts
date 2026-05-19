@@ -74,4 +74,12 @@ export {
 	type TurnStartEvent,
 	type WorkingIndicatorOptions,
 } from "./extensions/index.ts";
+export { RpcAgentSession, type RpcAgentSessionOptions } from "./rpc-agent-session.ts";
+export type { Session } from "./session.ts";
+export {
+	EMPTY_RESOURCE_LOADER,
+	EMPTY_SESSION_EXTENSIONS,
+	type SessionExtensionRunner,
+	type SessionExtensions,
+} from "./session-extensions.ts";
 export { createSyntheticSourceInfo } from "./source-info.ts";

@@ -211,7 +211,8 @@ ${chalk.bold("Commands:")}
   ${APP_NAME} update [source|self|pi]   Update pi and installed extensions
   ${APP_NAME} list                      List installed extensions from settings
   ${APP_NAME} config                    Open TUI to enable/disable package resources
-  ${APP_NAME} <command> --help          Show help for install/remove/uninstall/update/list
+  ${APP_NAME} connect <target>          Connect TUI to a remote ${APP_NAME} --mode rpc process
+  ${APP_NAME} <command> --help          Show help for a command
 
 ${chalk.bold("Options:")}
   --provider <name>              Provider name (default: google)
